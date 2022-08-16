@@ -1,0 +1,271 @@
+:root {
+    --cl-white: hsl(0, 0%, 100%);
+    --cl-blue: hsl(234, 41%, 41%);
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    min-width: 100%;
+    min-height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    color: var(--cl-blue);
+    line-height: 1.5;
+}
+
+img {
+    max-width: 100%;
+}
+
+ul[role='list'] {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+.main-div {
+    padding: 3rem 6rem 0 6rem;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+}
+
+nav .nav-items {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .nav-items h5 {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+nav .nav-items h5:not(:last-of-type) {
+    padding-right: 6rem;
+}
+
+.signin-btn {
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    color: var(--cl-white);
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+    background: linear-gradient(
+        to right,
+        hsl(263, 85%, 65%),
+        hsl(318, 100%, 77%)
+    );
+}
+
+.intro-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.left-section {
+    flex: 1;
+    margin-top: -10rem;
+    padding: 5rem;
+}
+
+.left-section h1 {
+    font-size: 7rem;
+}
+.left-section h4 {
+    font-size: 1.8rem;
+    letter-spacing: 0.15rem;
+    line-height: 2;
+    color: hsl(0, 0%, 51%);
+    padding: 2rem 4rem 0 0;
+}
+
+.learn-more-btn {
+    margin-top: 2rem;
+    padding: 1.5rem 4rem;
+    border-radius: 50px;
+    color: var(--cl-white);
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+    background: linear-gradient(
+        to right,
+        hsl(263, 85%, 65%),
+        hsl(318, 100%, 77%)
+    );
+}
+
+.imgs-div {
+    flex: 2;
+    min-height: 100vh;
+    background-image: url(../images/backcover.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.imgs-div > img:nth-child(3) {
+    margin-top: 10%;
+    margin-left: 3%;
+}
+
+.imgs-div > img:nth-child(1) {
+    position: absolute;
+    top: 60%;
+    left: 40%;
+}
+
+.vector-dot {
+    position: absolute;
+    top: 60%;
+    left: 44%;
+}
+
+@media screen and (max-width: 1200px) {
+    .left-section h1 {
+        font-size: 5rem;
+        line-height: 1;
+    }
+
+    .left-section h4 {
+        font-size: 1rem;
+        padding: 2rem 2rem 0 0;
+    }
+}
+
+@media screen and (max-width: 938px) {
+    nav .nav-items {
+        display: none;
+    }
+
+    .imgs-div > img:nth-child(3) {
+        width: 40rem;
+    }
+    .imgs-div > img:nth-child(1) {
+        top: 50%;
+    }
+
+    .vector-dot {
+        top: 50%;
+        left: 48%;
+    }
+
+    .left-section h1 {
+        font-size: 3rem;
+        line-height: 1;
+    }
+
+    .left-section h4 {
+        font-size: 1rem;
+        padding: 1rem 1rem 0 0;
+    }
+    .learn-more-btn {
+        font-size: 1.5rem;
+    }
+    .left-section {
+        margin-top: 5rem;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .intro-section {
+        flex-direction: column-reverse;
+    }
+
+    .left-section {
+        text-align: center;
+        margin-top: -50%;
+    }
+
+    .imgs-div {
+        flex: 1;
+        width: 100%;
+    }
+
+    .imgs-div > img:nth-child(3) {
+        margin-top: 14rem;
+        margin-left: 15rem;
+        width: 25rem;
+    }
+
+    .imgs-div > img:nth-child(1) {
+        display: none;
+    }
+    .vector-dot {
+        display: none;
+    }
+
+    .left-section {
+        margin-top: 10rem;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    nav img {
+        width: 10rem;
+    }
+
+    .imgs-div > img:nth-child(3) {
+        margin-top: 15rem;
+        margin-left: 12rem;
+        width: 20rem;
+    }
+
+    .left-section {
+        text-align: center;
+        margin-top: -20rem;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    .main-div {
+        padding: 2rem 1rem 0 1rem;
+    }
+    .imgs-div {
+        background-size: 80%;
+    }
+}
